@@ -1,7 +1,0 @@
-select A.country, count(D.customer_id)
-  from country A left join city B on A.country_id = B.country_id
-                  left join address C on B.city_id = C.city_id
-                  left join customer D on C.address_id = D.address_id
-                  group by A.country
-                  order by count(D.customer_id) desc
-                  limit 10
